@@ -1,18 +1,65 @@
 <?php
 
 declare(strict_types=1);
+class Beverage
+{
+  const barName = "Het Vervolg";
+  // define($barName, 'Het Vervolg');
+  private string $color;
+  private float $price;
+  private string $temperature;
+  public function __construct(string $color, float $price, string $temperature = 'cold')
+  {
+    $this->color = $color;
+    $this->price = $price;
+    $this->temperature = $temperature;
 
-/* EXERCISE 6
+  }
+  //Make a getInfo function which returns "This beverage is <temperature> and <color>."
+  public function getInfo()
+  {
+    echo "This beverage is " . $this->temperature . " and " . $this->color;
+  }
 
-Copy the classes of exercise 2.
 
-TODO: Change the properties to private.
-TODO: Make a const barname with the value 'Het Vervolg'.
-TODO: Print the constant on the screen.
-TODO: Create a function in beverage and use the constant.
-TODO: Do the same in the beer class.
-TODO: Print the output of these functions on the screen.
-TODO: Make sure that every print is on a new line.
+  public function printBar()
+  {
+    return self::barName;
+  }
+}
 
-Use typehinting everywhere!
-*/
+class Beer extends Beverage
+{
+  private string $properties;
+  private float $alcoholPercentage;
+
+  public function __construct(string $color, float $price, string $temperature = 'cold', string $properties, float $alcoholPercentage)
+  {
+    $this->color = $color;
+    $this->price = $price;
+    $this->temperature = $temperature;
+    $this->properties = $properties;
+    $this->alcoholPercentage = $alcoholPercentage;
+  }
+  public function getAlcoholPercentage()
+  {
+    echo $this->alcoholPercentage;
+  }
+
+}
+$duvel = new Beer('blond', 3.5, 'cold', 'Duvel', 8.5);
+echo $duvel->getAlcoholPercentage() . "<br>";
+//  EXERCISE 6
+
+// Copy the classes of exercise 2.
+//  Change the properties to private.
+
+//  Make a const barname with the value 'Het Vervolg'.
+
+//  Print the constant on the screen.
+echo $duvel->printBar();
+//  Create a function in beverage and use the constant.
+
+//  Do the same in the beer class.
+
+//  Print the output of these functions on the screen.

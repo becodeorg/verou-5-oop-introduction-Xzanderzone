@@ -42,7 +42,7 @@ class Beer extends Beverage
   //  Make a getAlcoholPercentage function which returns the alocoholPercentage.
   public function getAlcoholPercentage()
   {
-    echo $this->alcoholPercentage;
+    return $this->alcoholPercentage;
   }
   //  Create a new private method in the Beer class called beerInfo which returns "Hi i'm Duvel and have an alcochol percentage of 8.5 and I have a light color."
   public function beerInfo()
