@@ -40,7 +40,7 @@ class Beer extends Beverage
   //  Make a getAlcoholPercentage function which returns the alocoholPercentage.
   public function getAlcoholPercentage()
   {
-    echo $this->alcoholPercentage;
+    return $this->alcoholPercentage;
   }
 }
 //  Instantiate an object which represents Duvel. Make sure that the color is set to blond, the price equals 3.5 euro and the temperature to cold automatically.
@@ -53,3 +53,12 @@ echo $duvel->color . "<br>";
 
 // Try to get this error on the screen= Fatal error: Uncaught Error: Call to undefined method Beverage::getAlcoholPercentage() in /var/www/becode/workshop/exercise2.php on line 64
 // USE TYPEHINTING EVERYWHERE!
+
+
+
+
+
+
+
+$error = new Beverage("error", 2);
+echo $error->getAlcoholPercentage();

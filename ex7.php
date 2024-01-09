@@ -4,7 +4,7 @@ declare(strict_types=1);
 class Beverage
 {
   const barName = "Het Vervolg";
-  static $address = "Melkmarkt 9, 2000 Antwerpen";
+  protected static $address = "Melkmarkt 9, 2000 Antwerpen";
   private string $color;
   private float $price;
   private string $temperature;
@@ -27,7 +27,7 @@ class Beverage
   }
   public static function getAddress()
   {
-    return Beverage::$address;
+    return Beverage::$address; //self:: does the same
   }
 }
 
@@ -48,18 +48,18 @@ class Beer extends Beverage
   {
     echo $this->alcoholPercentage;
   }
-
 }
+
 $duvel = new Beer('blond', 3.5, 'cold', 'Duvel', 8.5);
 echo $duvel->getAlcoholPercentage() . "<br>";
 echo $duvel->printBar() . '<br>';
 /* EXERCISE 7
-
 Copy your solution from exercise 6
-
  Make a static property in the Beverage class that can only be accessed from inside the class called address which has the value "Melkmarkt 9, 2000 Antwerpen".
-
  Print the address without creating a new instant of the beverage class 2 times in two different ways.
 */
 echo $duvel->getAddress() . '<br>';
-echo Beverage::$address;
+// echo Beverage::$address . '<br>';
+// echo Beer::$address . '<br>';
+echo Beverage::getAddress() . "<br>";
+echo Beer::getAddress();

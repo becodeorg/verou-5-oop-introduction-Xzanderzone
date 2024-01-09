@@ -20,24 +20,24 @@ class Beverage
   //Make a getInfo function which returns "This beverage is <temperature> and <color>."
   public function DrinkInfo()
   {
-    echo "This beverage is " . $this->temperature . " and " . $this->color;
+    return "This beverage is " . $this->temperature . " and " . $this->color;
   }
-  public function setPrice(float $price)
+  public function definatelyNotSetterForThetPriceHere(float $price)
   {
     $this->price = $price;
   }
-  public function getPrice()
+  public function definatelyNotGetterForThetPriceHere()
   {
-    echo $this->price;
+    return $this->price;
   }
 }
 //  Change the properties to private.
 //  Fix the errors without using getter and setter functions.
 //  Change the price to 3.5 euro and print it also on the screen on a new line.
 $cola = new Beverage("black", 2);
-$cola->setPrice(3.5);
-echo $cola->getPrice() . "<br>";
+$cola->definatelyNotSetterForThetPriceHere(3.5);
+echo $cola->definatelyNotGetterForThetPriceHere() . "<br>";
 
 //  print the getInfo on the screen.
 //  Print the temperature on the screen.
-$cola->DrinkInfo();
+echo $cola->DrinkInfo();

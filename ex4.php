@@ -13,6 +13,14 @@ class Beverage
     $this->temperature = $temperature;
 
   }
+  public function getColor()
+  {
+    return $this->color;
+  }
+  public function setColor(string $color)
+  {
+    $this->color = $color;
+  }
   //Make a getInfo function which returns "This beverage is <temperature> and <color>."
   public function getInfo()
   {
@@ -52,7 +60,7 @@ $duvel = new Beer('blond', 3.5, 'cold', 'Duvel', 8.5);
 echo $duvel->getAlcoholPercentage() . "<br>";
 echo $duvel->getInfo() . "<br>";
 // echo $duvel->alcoholPercentage . "<br>";
-// echo $duvel->color . "<br>";
+echo $duvel->getColor() . "<br>";
 
 
 

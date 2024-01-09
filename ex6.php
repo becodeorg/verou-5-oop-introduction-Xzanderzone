@@ -45,6 +45,10 @@ class Beer extends Beverage
   {
     echo $this->alcoholPercentage;
   }
+  public function printBarFromBeer()
+  {
+    return parent::barName;
+  }
 
 }
 $duvel = new Beer('blond', 3.5, 'cold', 'Duvel', 8.5);
@@ -57,9 +61,9 @@ echo $duvel->getAlcoholPercentage() . "<br>";
 //  Make a const barname with the value 'Het Vervolg'.
 
 //  Print the constant on the screen.
-echo $duvel->printBar();
 //  Create a function in beverage and use the constant.
+echo $duvel->printBar();
 
 //  Do the same in the beer class.
-
 //  Print the output of these functions on the screen.
+echo $duvel->printBarFromBeer();
